@@ -227,6 +227,85 @@
             
 
   
+    <article id="post-单片机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="单片机复习"><a href="#单片机复习" class="headerlink" title="单片机复习"></a>单片机复习</h1><p>[TOC]</p>
+<h2 id="一-单片机三总线："><a href="#一-单片机三总线：" class="headerlink" title="一. 单片机三总线："></a>一. 单片机三总线：</h2><ol>
+<li><strong>数据总线（Data Bus）</strong>：数据总线用于在单片机内部传输数据。它是双向的，用于传输来自内存、外设或其他单元的数据。数据总线的宽度决定了单片机能够同时传输的数据位数，例如8位、16位或32位数据总线。</li>
+<li><strong>地址总线（Address Bus）</strong>：地址总线用于指定单片机中的内存位置或外设的地址。它是单向的，用于从单片机发送地址信号。地址总线的宽度决定了单片机的寻址能力，即可以寻址的内存或外设的数量。例如，一个16位地址总线可以寻址2^16 &#x3D; 65536个不同的内存位置或外设地址。</li>
+<li><strong>控制总线（Control Bus）</strong>：控制总线用于传输控制信号和命令，以控制单片机的操作。它包括各种控制信号，如读写控制信号、时钟信号、复位信号、中断信号等。控制总线通常是双向的，用于传输控制信号和接收来自外部设备的状态信号.</li>
+</ol>
+<h2 id="二-外部中断请求标志的概念以及含义作用"><a href="#二-外部中断请求标志的概念以及含义作用" class="headerlink" title="二. 外部中断请求标志的概念以及含义作用"></a>二. 外部中断请求标志的概念以及含义作用</h2><ol>
+<li><strong>含义</strong>：中断请求标志位表示某个外部事件或设备触发了中断请求，需要单片机暂停当前的执行任务，转而处理中断事件。</li>
+<li><strong>作用</strong>：<ul>
+<li><strong>优先级控制</strong>：通过检查不同的中断请求标志位，单片机可以按照设定的优先级处理中断事件，以确保重要的中断优先得到处理。</li>
+<li><strong>及时响应</strong>：中断请求标志位的存在使得单片机能够迅速响应外部事件，而不需要不断地轮询或等待。</li>
+<li><strong>任务切换</strong>：当中断请求发生时，单片机可以通过保存当前执行任务的上下文，暂停执行当前任务，并切换到中断服务程序来处理中断事件。处理完成后，再返回到原来的任务继续执行。</li>
+<li><strong>事件处理</strong>：中断请求标志位的改变通常会触发一个中断服务程序（ISR，Interrupt Service Routine），该程序用于处理中断事件。通过检查中断请求标志位，单片机能够确定要执行哪个中断服务程序来处理特定的中断事件。</li>
+</ul>
+</li>
+</ol>
+<h2 id="三-中断控制的设置"><a href="#三-中断控制的设置" class="headerlink" title="三. 中断控制的设置"></a>三. 中断控制的设置</h2><ol>
+<li><strong>确定中断源</strong>：首先需要确定系统中的中断源，即会触发中断请求的设备或事件。这可以是外部设备（如按键、传感器等）、定时器、通信接口或其他软件生成的中断请求。</li>
+<li><strong>分配中断向量</strong>：每个中断源需要分配一个唯一的中断向量。中断向量是一个地址，用于指示中断处理程序（中断服务例程，ISR）的入口点。通常，中断向量会在系统初始化过程中分配和设置。</li>
+<li><strong>中断控制器设置</strong>：如果系统使用中断控制器，需要对中断控制器进行相应的设置。这包括配置中断优先级、中断屏蔽和中断使能等。</li>
+<li><strong>中断处理程序编写</strong>：为每个中断源编写相应的中断处理程序（中断服务例程）。中断处理程序是在中断发生时执行的一段代码，用于处理特定的中断事件。</li>
+<li><strong>中断使能</strong>：在适当的时候，启用或禁用中断。这可以通过设置相应的中断使能位或中断屏蔽位来实现。</li>
+<li><strong>中断优先级设置</strong>：如果系统支持中断优先级，可以根据需求设置中断的优先级顺序。较高优先级的中断将在较低优先级的中断之前得到处理。</li>
+</ol>
+    
+    <a class="article-more-a" href="/pHq-blog/2024/05/20/%E5%8D%95%E7%89%87%E6%9C%BA/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/pHq-blog/2024/05/20/%E5%8D%95%E7%89%87%E6%9C%BA/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+	<!-- 目录内容 -->
+	     
+	<!-- 目录内容结束 -->
+
+  
     <article id="post-RFID" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
