@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://phquathi.github.io">
-  <title>Archives: 2024 | 欢迎来到phq的小站</title>
+  <title>欢迎来到phq的小站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
+  <meta name="description" content="xhtml2pdf库之中文换行xhtml2pdf 是一个 Python 库，用于将 HTML 和 CSS 文件转换为 PDF。它主要用于生成包含复杂布局和样式的 PDF 文档。以下是 xhtml2pdf 的一些关键特点和使用方法： 特点 支持 HTML 和 CSS：xhtml2pdf 能够解析和渲染大部分的 HTML 和 CSS，使得生成的 PDF 文档可以保持与网页相似的外观。 集成易用：可以与">
+<meta property="og:type" content="article">
 <meta property="og:title" content="欢迎来到phq的小站">
-<meta property="og:url" content="http://phquathi.github.io/archives/2024/page/2/index.html">
+<meta property="og:url" content="http://phquathi.github.io/2024/06/14/xhtml2pdf%E5%BA%93%E4%B9%8B%E4%B8%AD%E6%96%87%E6%8D%A2%E8%A1%8C/index.html">
 <meta property="og:site_name" content="欢迎来到phq的小站">
+<meta property="og:description" content="xhtml2pdf库之中文换行xhtml2pdf 是一个 Python 库，用于将 HTML 和 CSS 文件转换为 PDF。它主要用于生成包含复杂布局和样式的 PDF 文档。以下是 xhtml2pdf 的一些关键特点和使用方法： 特点 支持 HTML 和 CSS：xhtml2pdf 能够解析和渲染大部分的 HTML 和 CSS，使得生成的 PDF 文档可以保持与网页相似的外观。 集成易用：可以与">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-14T13:04:52.365Z">
+<meta property="article:modified_time" content="2024-06-14T13:19:10.973Z">
 <meta property="article:author" content="Phquathi">
 <meta name="twitter:card" content="summary">
   
@@ -220,99 +224,170 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-xhtml2pdf库之中文换行" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+  <div class="article-entry" itemprop="articleBody">
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/pHq-blog/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/pHq-blog/2024/05/20/%E5%9B%BE%20Graph/" class="archive-article-date">
-        <time datetime="2024-05-20T06:53:12.782Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
-</a>
+    <h1 id="xhtml2pdf库之中文换行"><a href="#xhtml2pdf库之中文换行" class="headerlink" title="xhtml2pdf库之中文换行"></a>xhtml2pdf库之中文换行</h1><p><code>xhtml2pdf</code> 是一个 Python 库，用于将 HTML 和 CSS 文件转换为 PDF。它主要用于生成包含复杂布局和样式的 PDF 文档。以下是 <code>xhtml2pdf</code> 的一些关键特点和使用方法：</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li><strong>支持 HTML 和 CSS</strong>：<code>xhtml2pdf</code> 能够解析和渲染大部分的 HTML 和 CSS，使得生成的 PDF 文档可以保持与网页相似的外观。</li>
+<li><strong>集成易用</strong>：可以与 Django 和 Flask 等流行的 Python Web 框架轻松集成，适用于生成报告、发票、证书等需要定制布局的 PDF 文件。</li>
+<li><strong>可扩展性强</strong>：支持自定义字体、图片、表格等元素，适合复杂文档的生成需求。</li>
+<li><strong>开源免费</strong>：<code>xhtml2pdf</code> 是一个开源项目，可以自由使用和修改。</li>
+</ol>
+<h2 id="开发时遇到的问题"><a href="#开发时遇到的问题" class="headerlink" title="开发时遇到的问题"></a>开发时遇到的问题</h2><p>这么好用简便并且开源的库，自然也少不了其问题所在。由于其对中文的比较糟糕的支持，导致其无法通过改变css样式比如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">word-wrap</span>: break-word;</span><br><span class="line"><span class="attribute">white-space</span>: pre-wrap;</span><br><span class="line"><span class="attribute">overflow-wrap</span>: break-word;</span><br></pre></td></tr></table></figure>
 
-        </div>
-    	 
+<p>上面这种常用的换行样式在这个库中对于中文就无法正常换行。</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
+<p>在网上搜了一圈找到的办法同样没啥用，网上“通用“的做法是在.py文件中引用以下几句代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> reportlab.pdfbase <span class="keyword">import</span> pdfmetrics</span><br><span class="line"><span class="keyword">from</span> reportlab.pdfbase.ttfonts <span class="keyword">import</span> TTFont </span><br><span class="line">pdfmetrics.registerFont(TTFont(<span class="string">&#x27;msyh&#x27;</span>, <span class="string">&#x27;msyh.ttf&#x27;</span>))</span><br><span class="line"><span class="keyword">import</span> reportlab.lib.styles</span><br><span class="line">reportlab.lib.styles.ParagraphStyle.defaults[<span class="string">&#x27;wordWrap&#x27;</span>] = <span class="string">&#x27;CJK&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>是的，我没看懂并且没用。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>于是我就只能遇事不决暴力出奇迹，直接对需要传进去的html字符串做一个预处理。</p>
+<p>对于<code>xhtml2pdf</code>库中<strong>A4</strong>大小的纸张，通常为43个中文字符需要换一次行，所以直接遍历html字符串，每当中文符超过43个，就打上一个<code>&lt;br&gt;</code>标签！</p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">insert_manual_line_breaks</span>(<span class="params">html: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    chinese_char_pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;[\u4e00-\u9fa5]&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_break_tags</span>(<span class="params">text</span>):</span><br><span class="line">        new_text = <span class="string">&quot;&quot;</span></span><br><span class="line">        char_count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> text:</span><br><span class="line">            new_text += char</span><br><span class="line">            <span class="keyword">if</span> chinese_char_pattern.match(char):</span><br><span class="line">                char_count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> char_count &gt;= <span class="number">43</span>:</span><br><span class="line">                    new_text += <span class="string">&#x27;&lt;br&gt;&#x27;</span></span><br><span class="line">                    char_count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> new_text</span><br><span class="line">    paragraph_pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;(&lt;p&gt;.*?&lt;/p&gt;)&#x27;</span>, re.DOTALL)</span><br><span class="line">    paragraphs = paragraph_pattern.findall(html)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> paragraph <span class="keyword">in</span> paragraphs:</span><br><span class="line">        modified_paragraph = add_break_tags(paragraph)</span><br><span class="line">        html = html.replace(paragraph, modified_paragraph)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> html</span><br></pre></td></tr></table></figure>
+
+<p>预处理之后总算是稍微能看了，没办法，只能看这个库的作者愿不愿意维护更新一下多语种支持了。</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Phquathi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://phquathi.github.io/pHq-blog/2024/06/14/xhtml2pdf库之中文换行/" title="" target="_blank">http://phquathi.github.io/pHq-blog/2024/06/14/xhtml2pdf库之中文换行/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://phquathi.github.io/2024/06/14/xhtml2pdf%E5%BA%93%E4%B9%8B%E4%B8%AD%E6%96%87%E6%8D%A2%E8%A1%8C/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/pHq-blog/2024/05/20/%E5%8D%95%E7%89%87%E6%9C%BA/" class="archive-article-date">
-        <time datetime="2024-05-20T06:53:12.777Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/pHq-blog/2024/06/05/%E5%9B%BD%E4%BA%A7%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/pHq-blog/2024/05/20/RFID/" class="archive-article-date">
-        <time datetime="2024-05-20T06:53:12.763Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
-</a>
 
-        </div>
-    	 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/pHq-blog/archives/2024/">&amp;laquo; Prev</a><a class="page-number" href="/pHq-blog/archives/2024/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
+
+
+
+
+
+
+	<!-- 目录内容 -->
+	     
+	<!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -352,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
