@@ -18,7 +18,7 @@
 <meta property="og:description" content="深度学习入门(3)–感知机定义感知机接收多个信号，输出一个信号。 下图为一个最基本的两输入感知机例子： 1234graph TD;    x1((x1)) --&gt;|w1| y((y))    x2((x2)) --&gt;|w2| y  x1、x2是输入信号，y是输出信号，w1、w2是权重，⚪称为“神经元”或者“节点”。输入信号被送往神经元时，会被分别乘以固定的权重（w1x1、w2x2）。神">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-18T08:01:04.122Z">
-<meta property="article:modified_time" content="2024-06-18T08:55:20.077Z">
+<meta property="article:modified_time" content="2024-06-18T08:58:41.025Z">
 <meta property="article:author" content="Phquathi">
 <meta name="twitter:card" content="summary">
   
@@ -238,6 +238,8 @@
 <p>$$y &#x3D; \begin{cases}<br>      0 &amp; \text{if } (w_1x_1 + w_2x_2 \leq \theta) \<br>      1 &amp; \text{if }( w_1x_1 + w_2x_2 &gt; \theta )<br>   \end{cases}$$</p>
 <h2 id="使用感知机实现与门、或门、非门"><a href="#使用感知机实现与门、或门、非门" class="headerlink" title="使用感知机实现与门、或门、非门"></a>使用感知机实现与门、或门、非门</h2><h3 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h3><p>直接实现代码：(w与$\theta$的计算过程省略，可自己演算一遍)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">AND</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    w1, w2, theta = <span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.7</span></span><br><span class="line">    tmp = x1*w1 + x2*w2</span><br><span class="line">    <span class="keyword">if</span> tmp &lt;= theta:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> tmp &gt; theta:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">0</span>, <span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(AND(<span class="number">1</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>输出：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
