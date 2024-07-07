@@ -18,7 +18,7 @@
 <meta property="og:description" content="外中断与内中断Q:举例外中断与内中断 A:外中断和内中断是计算机系统中处理器响应外部或内部事件的两种不同机制。以下是它们的定义和例子： 外中断（External Interrupts）外中断是由处理器外部的硬件设备或外部条件引起的中断。这类中断通常是为了响应外部事件，如输入输出操作、计时器溢出等。 例子：  键盘中断：当用户按下键盘上的某个键时，键盘控制器会向处理器发送一个中断信号，通知处理器有键">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-07T09:38:38.122Z">
-<meta property="article:modified_time" content="2024-07-07T09:39:09.262Z">
+<meta property="article:modified_time" content="2024-07-07T11:04:41.023Z">
 <meta property="article:author" content="Phquathi">
 <meta name="twitter:card" content="summary">
   
@@ -249,6 +249,8 @@
 </ol>
 <p>通过这些例子，可以看出外中断和内中断在源头和作用上的差异。外中断主要是响应外部设备的请求，而内中断则是处理内部程序执行中的异常和错误。</p>
 <h2 id="Q-1"><a href="#Q-1" class="headerlink" title="Q:"></a>Q:</h2><p>在C51上编程举例中断，以信号灯为例</p>
+<span id="more"></span>
+
 <h2 id="A-1"><a href="#A-1" class="headerlink" title="A:"></a>A:</h2><p>在C51单片机上编程实现中断控制的信号灯，可以使用定时器中断来周期性地切换信号灯的状态。以下是一个简化的例子，演示如何使用C51汇编和C语言来实现这个功能。</p>
 <p>假设我们有一个简单的交通信号灯系统，包含红灯、黄灯和绿灯，每个灯分别接在P1口的不同引脚上。我们使用定时器中断来周期性地改变信号灯的状态。</p>
 <h3 id="硬件连接"><a href="#硬件连接" class="headerlink" title="硬件连接"></a>硬件连接</h3><ul>
