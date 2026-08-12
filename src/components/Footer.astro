@@ -18,4 +18,24 @@ const currentYear = new Date().getFullYear();
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
     </div>
+    <!-- 不蒜子访客统计（沿用旧站统计服务，数据延续） -->
+    <div id="busuanzi-container" class="transition text-50 text-sm text-center mt-2 hidden" data-pagefind-ignore>
+        <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+        <span class="mx-1">·</span>
+        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+    </div>
 </div>
+
+<script>
+    // 静态站点访问量统计（https://busuanzi.ibruce.info），统计服务不可用时自动隐藏
+    const busuanziScript = document.createElement("script");
+    busuanziScript.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.min.js";
+    busuanziScript.async = true;
+    busuanziScript.onload = () => {
+        const container = document.getElementById("busuanzi-container");
+        if (container) container.classList.remove("hidden");
+        const pagePv = document.getElementById("busuanzi_container_page_pv");
+        if (pagePv) pagePv.classList.remove("hidden");
+    };
+    document.head.appendChild(busuanziScript);
+</script>
