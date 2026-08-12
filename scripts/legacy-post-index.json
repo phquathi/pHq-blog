@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-08-12T06:45:29.702Z",
+  "stats": {
+    "discovered": 25,
+    "converted": 25,
+    "failed": 0,
+    "warnings": 6,
+    "imagesKept": 1,
+    "imagesMissing": 6,
+    "imagesSkipped": 0,
+    "legacyUrlsPreserved": 25
+  },
+  "posts": [
+    {
+      "dir": "2022/07/01/My-first-bolg",
+      "legacyPath": "2022/07/01/My-first-bolg",
+      "title": "My first bolg",
+      "published": "2022-07-01",
+      "description": "我的第一篇博客欢迎光临！",
+      "outFile": "src\\content\\posts\\2022-07-01-My-first-bolg.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/03/十年不悔-血战再开！",
+      "legacyPath": "2022/07/03/十年不悔-血战再开！",
+      "title": "十年不悔 血战再开！",
+      "published": "2022-07-03",
+      "description": "十年的再会​ 2022年7月3日，动漫《BLEACH：境界》放出了其最后一个漫画篇章千年血战篇的正式pv，据TV动画完结已过去了整整十年。正如当初一护在正片366话的结尾说的最后一句“再会了”一样，它没有欺骗我们，它真的来了。 【10月/中字首发】死神 千年血战篇 正式PV【MCE汉化组】 ​",
+      "outFile": "src\\content\\posts\\2022-07-03-十年不悔-血战再开！.md",
+      "status": "ok",
+      "warnings": [],
+      "images": [
+        {
+          "src": "http://gitee.com/phquathi/pic-tutu/raw/master/20220703183753.png",
+          "status": "kept"
+        }
+      ]
+    },
+    {
+      "dir": "2022/07/04/Java学习笔记（01）",
+      "legacyPath": "2022/07/04/Java学习笔记（01）",
+      "title": "Java学习笔记（01）",
+      "published": "2022-07-04",
+      "description": "java学习之GUI标签（JLable）JLabel 1new Jlabel(\"XXX\"); 图标Icon",
+      "outFile": "src\\content\\posts\\2022-07-04-Java学习笔记（01）.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/05/acwing暑假每日一题（2022-7-5）",
+      "legacyPath": "2022/07/05/acwing暑假每日一题（2022-7-5）",
+      "title": "acwing暑假每日一题（2022/7/5）",
+      "published": "2022-07-05",
+      "description": "acwing 3564.日期类3564. 日期类 - AcWing题库 很简单的一道模拟题，博主直接暴力一遍过（",
+      "outFile": "src\\content\\posts\\2022-07-05-acwing暑假每日一题（2022-7-5）.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/06/Python学习总结（一）",
+      "legacyPath": "2022/07/06/Python学习总结（一）",
+      "title": "Python学习总结（一）",
+      "published": "2022-07-06",
+      "description": "Python学习之基础篇：语法1.1 print()函数每种语言基础中的基础，即打印一行输出 1print(\"hello world\") 万物起源于hello world",
+      "outFile": "src\\content\\posts\\2022-07-06-Python学习总结（一）.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/06/acwing暑假每日一题（2022-7-6）",
+      "legacyPath": "2022/07/06/acwing暑假每日一题（2022-7-6）",
+      "title": "acwing暑假每日一题（2022/7/6）",
+      "published": "2022-07-06",
+      "description": "acwing 3625.幂次方3625. 幂次方 - AcWing题库 快速幂模板题，熟练模板即可",
+      "outFile": "src\\content\\posts\\2022-07-06-acwing暑假每日一题（2022-7-6）.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/07/acwing暑假每日一题（2022-7-7）",
+      "legacyPath": "2022/07/07/acwing暑假每日一题（2022-7-7）",
+      "title": "acwing暑假每日一题（2022/7/7）",
+      "published": "2022-07-07",
+      "description": "acwing 3587.连通图3587. 连通图 - AcWing题库 这题是一道经典的带权并查集 如果x和y不相连，就把它们合并 最后判断最大的图的边数与n相不相等",
+      "outFile": "src\\content\\posts\\2022-07-07-acwing暑假每日一题（2022-7-7）.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2022/07/08/北华大学计算机程序设计算法提高训练营个人赛-签到题",
+      "legacyPath": "2022/07/08/北华大学计算机程序设计算法提高训练营个人赛-签到题",
+      "title": "北华大学计算机程序设计算法提高训练营个人赛-签到题",
+      "published": "2022-07-08",
+      "description": "A.洛姐打题日记水氵 123456789101112131415#include<bits/stdc++.h>using namespace std;int main()&#123; string s ; cin >> s ; if ( s == \"AC\" ) cout << \"Accepted\" &lt",
+      "outFile": "src\\content\\posts\\2022-07-08-北华大学计算机程序设计算法提高训练营个人赛-签到题.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/20/RFID",
+      "legacyPath": "2024/05/20/RFID",
+      "title": "RFID复习",
+      "published": "2024-05-20",
+      "description": "RFID复习[TOC] 一. RFID概述1.1 RFID 定义RFID: Raido Frequence Identification，射频识别 一种非接触式的自动识别技术，通过射频信号自动识别目标对象并获取相关数据，识别工作无须人工干预 由电子标签（tag）、阅读器（Reader）、应用系统构成 1.2 自动识别技术比较码、指纹准确度高，码快，“技术”速度一般，码简单 RFID: 非接触式快速",
+      "outFile": "src\\content\\posts\\2024-05-20-RFID.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/20/单片机",
+      "legacyPath": "2024/05/20/单片机",
+      "title": "单片机复习",
+      "published": "2024-05-20",
+      "description": "单片机复习[TOC] 一. 单片机三总线： 数据总线（Data Bus）：数据总线用于在单片机内部传输数据。它是双向的，用于传输来自内存、外设或其他单元的数据。数据总线的宽度决定了单片机能够同时传输的数据位数，例如8位、16位或32位数据总线。 地址总线（Address Bus）：地址总线用于指定单片机中的内存位置或外设的地址。它是单向的，用于从单片机发送地址信号。地址总线的宽度决定了单片机的寻址",
+      "outFile": "src\\content\\posts\\2024-05-20-单片机.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/20/图 Graph",
+      "legacyPath": "2024/05/20/图 Graph",
+      "title": "图 Graph",
+      "published": "2024-05-20",
+      "description": "图 Graph1.图的定义顶点用边连起来就是图 由不相交的顶点集与边集组成( G = ( V , E ) )的非线性数据结构 其中E是边的有穷集，V是顶点的有穷非空集 无向图边没有方向的图称为无向图 有向图边有方向的图称为有向图 度与节点关联的边数，在有向图中为出度与入度之和 出度在有向图中以这个结点为起点的有向边的数目 入度在有向图中以这个结点为终点的有向边的数目 任意一个图的总度数等",
+      "outFile": "src\\content\\posts\\2024-05-20-图 Graph.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/20/物联网通信技术",
+      "legacyPath": "2024/05/20/物联网通信技术",
+      "title": "物联网通信复习",
+      "published": "2024-05-20",
+      "description": "物联网通信复习本博客目前暂时没部署图床无法上传图片，敬请谅解！ 1.什么是物联网物联网就是基于互联网的嵌入式系统 物联网自主体系结构：（1）数据面 （2）控制面 （3）知识面 （4）管理面 物联网三大特征： 全面数据感知 可靠信息传递 智能信息处理 2.物联网自主体系架构一种采用了自主通信技术的体系架构，为了适应异构物联网通信环境的需要 3.常见近距离通信技术RFID、NFC、蓝牙、ZigBe",
+      "outFile": "src\\content\\posts\\2024-05-20-物联网通信技术.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/23/C vs C++ Comparison",
+      "legacyPath": "2024/05/23/C vs C++ Comparison",
+      "title": "C vs C++ Comparison",
+      "published": "2024-05-23",
+      "description": "C vs C++ ComparisonQ:让初学者学c好还是直接c++ A:对于初学者来说，选择学习C语言还是直接学习C++主要取决于学习目标和个人兴趣。以下是两者的优缺点：学习C语言的优点基础性强：C语言是许多现代编程语言的基础。理解C语言可以帮助你更好地理解其他编程语言的底层原理。系统编程：C语言常用于系统编程和嵌入式开发，适合对底层编程感兴趣的初学者。简洁性：C语言的语法相对简单，容易上手，",
+      "outFile": "src\\content\\posts\\2024-05-23-C vs C++ Comparison.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/24/SCI索引数据库介绍",
+      "legacyPath": "2024/05/24/SCI索引数据库介绍",
+      "title": "SCI索引数据库介绍",
+      "published": "2024-05-24",
+      "description": "SCI索引数据库介绍Q:SCI是什么？ A:SCI 指的是科学引文索引（Science Citation Index），是由美国科学信息研究所（Institute for Scientific Information，简称ISI）开发的一种用于科学研究文献的引文索引数据库。SCI 主要收录自然科学领域的高质量学术期刊文章，并通过引文网络跟踪文献之间的引用关系。以下是SCI的一些主要功能和特点：文献",
+      "outFile": "src\\content\\posts\\2024-05-24-SCI索引数据库介绍.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？1",
+      "legacyPath": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？1",
+      "title": "数字失忆：我们如何失去了中文互联网的历史（一）？",
+      "published": "2024-05-26",
+      "description": "数字失忆：我们如何失去了中文互联网的历史（一）？1一个有意思的发现： 如果我们在百度上搜索“马云”这两个字，把时间设定在1998年到2005年，能搜出来的信息，大概有多少条呢?是1亿条，还是1000万条，还是100万条?我在几个群问过，大家普遍的猜想是，应该是百万或者千万的级别。毕竟，互联网信息如此浩如烟海。马云作为那个时代的风云企业家，在网上留下的痕迹肯定是非常多的。但实际上能搜出的全部结果如下",
+      "outFile": "src\\content\\posts\\2024-05-26-数字失忆：我们如何失去了中文互联网的历史？1.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？2",
+      "legacyPath": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？2",
+      "title": "数字失忆：我们如何失去了中文互联网的历史（二）？",
+      "published": "2024-05-26",
+      "description": "数字失忆：我们如何失去了中文互联网的历史（二）？2之所以注意到这个问题，是因为研究牛人，所以需要经常查找他们的资料。 这两年来，我有一个非常明显的感觉:网上能找到的原始资料，每年都以断崖式的速度在锐减。之前还能看到一些原始的报道，后来慢慢没有了;之前还能找到主人公的演讲或者他们写的文章，后来慢慢找不到了;之前还能看到很多采访或对谈的视频，后来慢慢消失了。 似乎有一个吞噬网页的怪兽，它沿着历史的时间",
+      "outFile": "src\\content\\posts\\2024-05-26-数字失忆：我们如何失去了中文互联网的历史？2.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？3",
+      "legacyPath": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？3",
+      "title": "数字失忆：我们如何失去了中文互联网的历史（三）？",
+      "published": "2024-05-26",
+      "description": "数字失忆：我们如何失去了中文互联网的历史（三）？3为什么会出现这种情况呢？我猜想，主要原因可能是两个: 一是经济原因。 网站的存在，需要服务器、需要带宽、需要机房、需要人员运维，还有很多杂七杂八的监管和维护费用，这些都是成本。如果是有战略价值(例如需要向外展示公司想要展示的信息)，或者有短期流量价值(例如还时不时有较多的人上来看)，同时公司账上也不差钱，那么还会有动力去维持。 但是如果公司在商业上",
+      "outFile": "src\\content\\posts\\2024-05-26-数字失忆：我们如何失去了中文互联网的历史？3.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？4",
+      "legacyPath": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？4",
+      "title": "数字失忆：我们如何失去了中文互联网的历史（四）？",
+      "published": "2024-05-26",
+      "description": "数字失忆：我们如何失去了中文互联网的历史（四）？4 如果未来的文明是互联网的文明。我们这一代人，将是没有历史的。因为互联网没有留下我们的痕迹。 “没有历史”， 这件事情重要吗? 当然很重要。 我曾经为了写邵亦波的文章，想尽了一切办法，试图找到邵亦波2007年参加《波士堂》节目的原始视频，以及他妻子鲍佳欣以“文爱妈咪”网名在宝宝树社区发了好几年的帖子。最终还是没有找到，只能深深遗憾。 虽然《红尘已",
+      "outFile": "src\\content\\posts\\2024-05-26-数字失忆：我们如何失去了中文互联网的历史？4.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？5",
+      "legacyPath": "2024/05/26/数字失忆：我们如何失去了中文互联网的历史？5",
+      "title": "数字失忆：我们如何失去了中文互联网的历史（五）？",
+      "published": "2024-05-26",
+      "description": "数字失忆：我们如何失去了中文互联网的历史（五）？5如果一件事对我们很重要，而它正在消亡,我们有什么办法挽救它吗? 有人曾作出这样的尝试。美国有一个网站叫做“Internet Archive”，中文译作“互联网档案馆”，保存了很多原始网页。但是我试过，中文的原始网页，保存的很少，而且使用非常麻烦，搜索功能十分原始低效，和没保存差不多。 从技术层面来讲，保存从中国有互联网以来，到移动互联网兴起的十来年",
+      "outFile": "src\\content\\posts\\2024-05-26-数字失忆：我们如何失去了中文互联网的历史？5.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/06/05/国产大模型评测",
+      "legacyPath": "2024/06/05/国产大模型评测",
+      "title": "国产模型评测结果：",
+      "published": "2024-06-05",
+      "description": "国产模型评测结果：代码能力：通义千问2.5 > 文心一言4.0 >> 抖音豆包 绘画能力：抖音豆包 >> 文心一言 ≈ 通义千问2.5（后两者限制多的离谱，画个女人就要掐，默认就嗯出国风古装女） 聊天能力：抖音豆包 > 通义千问2.5 > 文心一言4.0（同样是限制太多，又没见证又没骂人就是拒绝） 最终总结： 通义千问适合工作学习，专业能力非常强，纠错能力",
+      "outFile": "src\\content\\posts\\2024-06-05-国产大模型评测.md",
+      "status": "ok",
+      "warnings": [
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\KGUX3UP6OW{1JALWQT12A@5.png",
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\T@UEAAVLXJ%JG4[9}5{BE3I.png",
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\JN]Y(9@65~HPARNA2C)8$I4.png",
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\KJ%FW]LK5JNO9MYSL5[@M`U.png",
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\C48I@FQ(WKB[{)2@2U~`_{0.png",
+        "local file image cannot be migrated: file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\JSYTP{[X$W]SQL5MPZQMCKQ.png"
+      ],
+      "images": [
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\KGUX3UP6OW{1JALWQT12A@5.png",
+          "status": "missing"
+        },
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\T@UEAAVLXJ%JG4[9}5{BE3I.png",
+          "status": "missing"
+        },
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\JN]Y(9@65~HPARNA2C)8$I4.png",
+          "status": "missing"
+        },
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\KJ%FW]LK5JNO9MYSL5[@M`U.png",
+          "status": "missing"
+        },
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\C48I@FQ(WKB[{)2@2U~`_{0.png",
+          "status": "missing"
+        },
+        {
+          "src": "file:///C:\\Users\\呐呐呐二次元の米娜桑\\AppData\\Roaming\\Tencent\\QQTempSys\\JSYTP{[X$W]SQL5MPZQMCKQ.png",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "dir": "2024/06/14/xhtml2pdf库之中文换行",
+      "legacyPath": "2024/06/14/xhtml2pdf库之中文换行",
+      "title": "xhtml2pdf库之中文换行",
+      "published": "2024-06-14",
+      "description": "xhtml2pdf库之中文换行xhtml2pdf 是一个 Python 库，用于将 HTML 和 CSS 文件转换为 PDF。它主要用于生成包含复杂布局和样式的 PDF 文档。以下是 xhtml2pdf 的一些关键特点和使用方法： 特点 支持 HTML 和 CSS：xhtml2pdf 能够解析和渲染大部分的 HTML 和 CSS，使得生成的 PDF 文档可以保持与网页相似的外观。 集成易用：可以与",
+      "outFile": "src\\content\\posts\\2024-06-14-xhtml2pdf库之中文换行.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/06/18/深度学习入门(1)",
+      "legacyPath": "2024/06/18/深度学习入门(1)",
+      "title": "深度学习入门(1)–numpy",
+      "published": "2024-06-18",
+      "description": "深度学习入门(1)–numpyNumPy支持各种数学运算 常用函数：1. 基础运算 加法: np.add 减法: np.subtract 乘法: np.multiply 除法: np.divide 取模: np.mod 幂运算: np.power 2. 三角函数 正弦: np.sin 余弦: np.cos 正切: np.tan 反正弦: np.arcsin 反余弦: np.arccos 反正切:",
+      "outFile": "src\\content\\posts\\2024-06-18-深度学习入门(1).md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/06/18/深度学习入门(2)",
+      "legacyPath": "2024/06/18/深度学习入门(2)",
+      "title": "深度学习入门(2)–matplotlib绘图",
+      "published": "2024-06-18",
+      "description": "深度学习入门(2)–matplotlib绘图开始123456789101112131415161718# 绘制sinx与cosx的图像import numpy as npimport matplotlib.pyplot as pltx1 = np.arange(0, 10, 0.1)y1 = np.sin(x1)y2 = np.cos(x1)plt.plot(x1, y1, label=&quot",
+      "outFile": "src\\content\\posts\\2024-06-18-深度学习入门(2).md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/06/18/深度学习入门(3)",
+      "legacyPath": "2024/06/18/深度学习入门(3)",
+      "title": "深度学习入门(3)–感知机",
+      "published": "2024-06-18",
+      "description": "深度学习入门(3)–感知机定义感知机接收多个信号，输出一个信号。 下图为一个最基本的两输入感知机例子： 1234graph TD; x1((x1)) -->|w1| y((y)) x2((x2)) -->|w2| y x1、x2是输入信号，y是输出信号，w1、w2是权重，⚪称为“神经元”或者“节点”。输入信号被送往神经元时，会被分别乘以固定的权重（w1x1、w2x2）。神",
+      "outFile": "src\\content\\posts\\2024-06-18-深度学习入门(3).md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    },
+    {
+      "dir": "2024/07/07/外中断与内中断",
+      "legacyPath": "2024/07/07/外中断与内中断",
+      "title": "外中断与内中断",
+      "published": "2024-07-07",
+      "description": "外中断与内中断Q:举例外中断与内中断 A:外中断和内中断是计算机系统中处理器响应外部或内部事件的两种不同机制。以下是它们的定义和例子： 外中断（External Interrupts）外中断是由处理器外部的硬件设备或外部条件引起的中断。这类中断通常是为了响应外部事件，如输入输出操作、计时器溢出等。 例子： 键盘中断：当用户按下键盘上的某个键时，键盘控制器会向处理器发送一个中断信号，通知处理器有键",
+      "outFile": "src\\content\\posts\\2024-07-07-外中断与内中断.md",
+      "status": "ok",
+      "warnings": [],
+      "images": []
+    }
+  ]
+}
