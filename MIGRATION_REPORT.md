@@ -107,11 +107,23 @@ https://phquathi.github.io/pHq-blog/2024/07/07/外中断与内中断/
 
 ## Git 提交
 
-（提交后回填：主要 commit SHA 见 `git log`，提交分阶段进行）
+迁移共 5 个提交（自基线 b236977 起，均已推送至 origin/master）：
+
+| Commit | 说明 |
+| --- | --- |
+| `a323a6f` | feat: migrate legacy blog posts to Markdown |
+| `b6403ca` | feat: scaffold Astro blog with Fuwari theme |
+| `3f33bbb` | ci: add GitHub Pages deploy workflow |
+| `1d493b1` | docs: add agent guide, readme and migration report |
+| `086a3d6` | chore: remove legacy Hexo static output |
 
 ## GitHub Actions 状态
 
-（部署完成后回填：见 https://github.com/phquathi/pHq-blog/actions ）
+- Workflow：`Deploy to GitHub Pages`（`.github/workflows/deploy.yml`）
+- 首次运行（commit `086a3d6`，run 31572216633）：**success**
+- GitHub Pages 构建源已通过 API 从 "Deploy from branch (master)" 切换为 "GitHub Actions"（build_type: workflow）
+- 另有一条旧的 "pages build and deployment" 失败记录，是切换前旧分支部署方式的遗留，可忽略
+- Actions 地址：https://github.com/phquathi/pHq-blog/actions
 
 ## 最终线上地址
 
@@ -119,12 +131,18 @@ https://phquathi.github.io/pHq-blog/2024/07/07/外中断与内中断/
 
 ## 已抽检的历史 URL（线上）
 
+以下地址在部署完成后均验证返回 200 且正文完整：
+
 - https://phquathi.github.io/pHq-blog/2024/07/07/外中断与内中断/
 - https://phquathi.github.io/pHq-blog/2022/07/01/My-first-bolg/
 - https://phquathi.github.io/pHq-blog/2022/07/03/十年不悔-血战再开！/（含外部图片）
 - https://phquathi.github.io/pHq-blog/2024/05/23/C%20vs%20C++%20Comparison/（含空格路径）
 - https://phquathi.github.io/pHq-blog/2024/05/20/图%20Graph/（含空格路径）
 - https://phquathi.github.io/pHq-blog/2024/05/26/数字失忆：我们如何失去了中文互联网的历史？4/
+- https://phquathi.github.io/pHq-blog/2024/06/18/深度学习入门(3)/
+- https://phquathi.github.io/pHq-blog/2022/07/04/Java学习笔记（01）/
+
+25 个旧 URL 全部在 build 期静态生成（见「历史 URL 清单」），新格式 URL `/posts/<id>/` 与 RSS、Pagefind 搜索、favicon 等资源同步验证正常。
 
 ## 仍需要处理的问题
 
