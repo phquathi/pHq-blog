@@ -2,8 +2,8 @@
 title: "C vs C++ Comparison"
 published: 2024-05-23
 description: "C vs C++ ComparisonQ:让初学者学c好还是直接c++ A:对于初学者来说，选择学习C语言还是直接学习C++主要取决于学习目标和个人兴趣。以下是两者的优缺点：学习C语言的优点基础性强：C语言是许多现代编程语言的基础。理解C语言可以帮助你更好地理解其他编程语言的底层原理。系统编程：C语言常用于系统编程和嵌入式开发，适合对底层编程感兴趣的初学者。简洁性：C语言的语法相对简单，容易上手，"
-tags: []
-category: ""
+tags: ["C", "C++"]
+category: "技术笔记"
 draft: false
 legacyPath: "2024/05/23/C vs C++ Comparison"
 ---
