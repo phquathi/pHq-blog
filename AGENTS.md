@@ -91,9 +91,9 @@ legacyPath: "2024/07/07/外中断与内中断"  # 仅历史文章有，勿动！
 ## 文章图片规范
 
 - 文章正文图片优先放在 `public/images/` 下（GitHub Pages 子路径 `/pHq-blog/` 下可正常加载）
-- 引用时使用相对 base 的路径，例如 `![](/images/posts/xxx/图1.png)` 或 `![alt](/images/xxx.png)`
+- 引用时写以 `/` 开头的站内路径即可，例如 `![](/images/posts/xxx/图1.png)`——构建时 `remark-rewrite-internal-links` 插件会自动补上 `/pHq-blog` base（`src/plugins/remark-rewrite-internal-links.js`，base 在 `astro.config.mjs` 的 `SITE_BASE` 注入）
+- 外部完整 URL（http/https 或 `//` 开头）不会被重写，可以直接使用
 - 不要使用 `http://localhost` 或本地绝对路径引用图片
-- 外部图片 URL（https）可以直接使用
 
 ## 新文章创建规范
 

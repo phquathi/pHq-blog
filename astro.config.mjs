@@ -22,12 +22,15 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
+import { remarkRewriteInternalLinks } from "./src/plugins/remark-rewrite-internal-links.js";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+
+const SITE_BASE = "/pHq-blog";
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://phquathi.github.io",
-	base: "/pHq-blog",
+	base: SITE_BASE,
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
@@ -112,6 +115,7 @@ export default defineConfig({
 			remarkDirective,
 			remarkSectionize,
 			parseDirectiveNode,
+			[remarkRewriteInternalLinks, { base: SITE_BASE }],
 		],
 		rehypePlugins: [
 			rehypeKatex,
