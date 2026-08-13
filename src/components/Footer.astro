@@ -19,23 +19,38 @@ const currentYear = new Date().getFullYear();
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
     </div>
     <!-- 不蒜子访客统计（沿用旧站统计服务，数据延续） -->
-    <div id="busuanzi-container" class="transition text-50 text-sm text-center mt-2 hidden" data-pagefind-ignore>
+    <div class="transition text-50 text-sm text-center mt-2" data-pagefind-ignore>
         <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
-        <span class="mx-1">·</span>
-        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+        <span id="busuanzi_container_site_uv" class="ml-1.5">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
     </div>
 </div>
 
 <script>
-    // 静态站点访问量统计（https://busuanzi.ibruce.info），统计服务不可用时自动隐藏
-    const busuanziScript = document.createElement("script");
-    busuanziScript.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.min.js";
-    busuanziScript.async = true;
-    busuanziScript.onload = () => {
-        const container = document.getElementById("busuanzi-container");
-        if (container) container.classList.remove("hidden");
-        const pagePv = document.getElementById("busuanzi_container_page_pv");
-        if (pagePv) pagePv.classList.remove("hidden");
-    };
-    document.head.appendChild(busuanziScript);
+    // 不蒜子访问统计（https://busuanzi.ibruce.info）。
+    // 注意：官方脚本文件名是 busuanzi.pure.mini.js（不是 min.js，写错会 404 导致统计永远不显示）。
+    // 容器默认可见，脚本加载成功后 busuanzi 自动填充数字；
+    // 多 CDN 兜底，全部失败时才隐藏统计区；
+    // swup 软导航会重建页面内容，需要在 content:replace 后重新加载以刷新文章阅读数。
+    const busuanziSources = [
+        "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",
+        "https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js",
+        "https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js",
+    ];
+    function loadBusuanzi(index = 0) {
+        if (index >= busuanziSources.length) return;
+        const script = document.createElement("script");
+        script.src = busuanziSources[index];
+        script.async = true;
+        script.onerror = () => loadBusuanzi(index + 1);
+        document.head.appendChild(script);
+    }
+    loadBusuanzi();
+    function setupBusuanziSwupHook() {
+        if (window.swup) {
+            window.swup.hooks.on("content:replace", () => loadBusuanzi());
+        } else {
+            document.addEventListener("swup:enable", setupBusuanziSwupHook, { once: true });
+        }
+    }
+    setupBusuanziSwupHook();
 </script>

@@ -47,12 +47,12 @@ const className = Astro.props.class;
     )}
 
     <!-- read count (busuanzi page pv) -->
-    <div class="flex items-center hidden" id="busuanzi_container_page_pv" data-pagefind-ignore>
+    <div class="flex items-center" data-pagefind-ignore>
         <div class="meta-icon"
         >
             <Icon name="material-symbols:visibility-outline-rounded" class="text-xl"></Icon>
         </div>
-        <span class="text-50 text-sm font-medium">阅读数 <span id="busuanzi_value_page_pv"></span></span>
+        <span class="text-50 text-sm font-medium" id="busuanzi_container_page_pv">阅读数 <span id="busuanzi_value_page_pv"></span></span>
     </div>
 
     <!-- categories -->
