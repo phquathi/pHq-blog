@@ -30,3 +30,6 @@ yarn.lock
 
 # Windows
 Thumbs.db
+
+# local agent guide (not for public repo)
+AGENTS.md
