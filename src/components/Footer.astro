@@ -20,34 +20,65 @@ const currentYear = new Date().getFullYear();
     </div>
     <!-- 不蒜子访客统计（沿用旧站统计服务，数据延续） -->
     <div class="transition text-50 text-sm text-center mt-2" data-pagefind-ignore>
-        <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
-        <span id="busuanzi_container_site_uv" class="ml-1.5">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+        <span>本站总访问量 <span class="bsz-value" data-bsz-key="site_pv"></span> 次</span>
+        <span class="ml-1.5">访客数 <span class="bsz-value" data-bsz-key="site_uv"></span> 人</span>
     </div>
 </div>
 
 <script>
-    // 不蒜子访问统计（https://busuanzi.ibruce.info）。
-    // 注意：官方脚本文件名是 busuanzi.pure.mini.js（不是 min.js，写错会 404 导致统计永远不显示）。
-    // 容器默认可见，脚本加载成功后 busuanzi 自动填充数字；
-    // 多 CDN 兜底，全部失败时才隐藏统计区；
-    // swup 软导航会重建页面内容，需要在 content:replace 后重新加载以刷新文章阅读数。
-    const busuanziSources = [
-        "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",
-        "https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js",
-        "https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js",
-    ];
-    function loadBusuanzi(index = 0) {
-        if (index >= busuanziSources.length) return;
+    // 不蒜子访问统计（自实现 JSONP，直连官方 API）。
+    // 背景：官方 busuanzi 脚本用 getElementById 填充，而本页 Footer 有桌面/移动两份实例，
+    // 重复 id 会导致只有第一份被填充，且脚本失败时会内联 display:none 隐藏容器，
+    // 移动端浏览器还可能截断 referer 使 page_pv 回退成 site_pv，导致数字错乱。
+    // 因此这里不加载官方脚本，改为自行请求并用 class 定位填充所有实例：
+    // - 容器标签始终可见，不再被脚本隐藏，显示稳定
+    // - class + data-bsz-key 精确定位，两个 Footer 实例都会被正确填充
+    // - 请求带序号 token，软导航并发时只接受最新响应，避免 page_pv 串位
+    // - referrerPolicy=unsafe-url 保证移动端也发送完整路径，page_pv 不会被服务端回退成站点总量
+    const w = window as any;
+    w.__bszToken = w.__bszToken || 0;
+    w.__bszRetries = w.__bszRetries || 0;
+    function fetchBusuanziStats() {
+        const token = ++w.__bszToken;
+        const cb = "BusuanziCallback_" + Math.floor(Math.random() * 1e12);
+        const cleanup = () => {
+            delete (window as any)[cb];
+        };
+        (window as any)[cb] = (data: { site_pv?: number; site_uv?: number; page_pv?: number }) => {
+            cleanup();
+            if (token !== w.__bszToken) return; // 丢弃过期响应
+            w.__bszRetries = 0;
+            const fill = (key: string, value: number | undefined) => {
+                if (value == null) return;
+                document
+                    .querySelectorAll('.bsz-value[data-bsz-key="' + key + '"]')
+                    .forEach((el) => {
+                        el.textContent = String(value);
+                    });
+            };
+            fill("site_pv", data.site_pv);
+            fill("site_uv", data.site_uv);
+            fill("page_pv", data.page_pv);
+        };
         const script = document.createElement("script");
-        script.src = busuanziSources[index];
+        script.src = "https://busuanzi.ibruce.info/busuanzi?jsonpCallback=" + cb;
         script.async = true;
-        script.onerror = () => loadBusuanzi(index + 1);
+        script.referrerPolicy = "unsafe-url";
+        script.onerror = () => {
+            cleanup();
+            if (token !== w.__bszToken) return;
+            // 失败重试一次，仍失败则保持标签显示（数字留空），不做任何隐藏
+            if (w.__bszRetries < 1) {
+                w.__bszRetries += 1;
+                setTimeout(fetchBusuanziStats, 1500);
+            }
+        };
         document.head.appendChild(script);
     }
-    loadBusuanzi();
+    fetchBusuanziStats();
     function setupBusuanziSwupHook() {
         if (window.swup) {
-            window.swup.hooks.on("content:replace", () => loadBusuanzi());
+            window.swup.hooks.on("content:replace", () => fetchBusuanziStats());
         } else {
             document.addEventListener("swup:enable", setupBusuanziSwupHook, { once: true });
         }
