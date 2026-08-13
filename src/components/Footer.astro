@@ -28,20 +28,24 @@ const currentYear = new Date().getFullYear();
 <script>
     // 不蒜子访问统计（自实现 JSONP，直连官方 API）。
     // 背景：官方 busuanzi 脚本用 getElementById 填充，而本页 Footer 有桌面/移动两份实例，
-    // 重复 id 会导致只有第一份被填充，且脚本失败时会内联 display:none 隐藏容器，
-    // 移动端浏览器还可能截断 referer 使 page_pv 回退成 site_pv，导致数字错乱。
+    // 重复 id 会导致只有第一份被填充，且脚本失败时会内联 display:none 隐藏容器。
     // 因此这里不加载官方脚本，改为自行请求并用 class 定位填充所有实例：
     // - 容器标签始终可见，不再被脚本隐藏，显示稳定
     // - class + data-bsz-key 精确定位，两个 Footer 实例都会被正确填充
     // - 请求带序号 token，软导航并发时只接受最新响应，避免 page_pv 串位
-    // - referrerPolicy=unsafe-url 保证移动端也发送完整路径，page_pv 不会被服务端回退成站点总量
+    // - referrerPolicy 使用 no-referrer-when-downgrade（与官方脚本一致，iOS Safari
+    //   等移动浏览器支持；unsafe-url 在部分移动浏览器上会被忽略导致不带 referer，
+    //   服务端 400 返回空数据），https->https 跨域仍会携带完整路径
+    // - 6 秒超时兜底：请求挂起（onerror 不触发）时也会清理并重试一次
     const w = window as any;
     w.__bszToken = w.__bszToken || 0;
     w.__bszRetries = w.__bszRetries || 0;
     function fetchBusuanziStats() {
         const token = ++w.__bszToken;
         const cb = "BusuanziCallback_" + Math.floor(Math.random() * 1e12);
+        let finished = false;
         const cleanup = () => {
+            finished = true;
             delete (window as any)[cb];
         };
         (window as any)[cb] = (data: { site_pv?: number; site_uv?: number; page_pv?: number }) => {
@@ -63,17 +67,21 @@ const currentYear = new Date().getFullYear();
         const script = document.createElement("script");
         script.src = "https://busuanzi.ibruce.info/busuanzi?jsonpCallback=" + cb;
         script.async = true;
-        script.referrerPolicy = "unsafe-url";
-        script.onerror = () => {
+        script.referrerPolicy = "no-referrer-when-downgrade";
+        const retry = () => {
             cleanup();
             if (token !== w.__bszToken) return;
-            // 失败重试一次，仍失败则保持标签显示（数字留空），不做任何隐藏
+            // 失败/超时重试一次，仍失败则保持标签显示（数字留空），不做任何隐藏
             if (w.__bszRetries < 1) {
                 w.__bszRetries += 1;
                 setTimeout(fetchBusuanziStats, 1500);
             }
         };
+        script.onerror = retry;
         document.head.appendChild(script);
+        setTimeout(() => {
+            if (!finished && token === w.__bszToken) retry();
+        }, 6000);
     }
     fetchBusuanziStats();
     function setupBusuanziSwupHook() {
