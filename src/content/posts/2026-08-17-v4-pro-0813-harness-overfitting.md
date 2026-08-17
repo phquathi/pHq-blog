@@ -1,6 +1,6 @@
 ---
 title: "V4-Pro-0813 是否对 Harness 过拟合？"
-published: 2026-08-14
+published: 2026-08-17
 description: "社区热议 V4-Pro 对 Harness 过拟合，但证据仍不充分：区分 interface shortcutting、协议兼容与 Harness 敏感性，才是验证这个问题的正确姿势。"
 tags: ["AI", "DeepSeek", "大模型"]
 category: "随笔"
